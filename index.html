@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="vsApp" class="no-js"> <!--<![endif]-->
+<!-- 
+   ██▒   ██ ██░ ██▓███      █     █░  ▄▄        ██████     ██░ ██ ▓█████  ██▀███  ▓█████ 
+  ▓██░   █▒░██▒▒██░  ██▒   ▓█░ █ ░█░▒ ███▄    ▒██    ▒     ██░ ██▒▓█   ▀ ▓██   ██▒▓█   ▀ 
+   ▓██  ██░▒██▒▒██░ ██▓▒   ▒█░ █ ░█ ▒██  ▀█▄  ░ ▓██▄      ▒██▀▀██░▒███   ▓██ ░▄█ ▒▒███   
+    ▒██ █░░░██░░██▄█▓▒ ▒   ░█░ █ ░█ ░██▄▄▄▄██   ▒   ██▒   ░▓█ ░██ ▒▓█  ▄ ▒██▀▀█▄  ▒▓█  ▄ 
+     ▒▀██  ░██░▒██▒ ░  ░   ░░██▒██▓  ▓█   ▓██▒▒██████▒▒   ░▓█▒░██▓░▒████▒░██▓ ▒██▒░▒████▒
+     ░ ▐░  ░▓  ▒▓▒░ ░  ░   ░ ▓░▒ ▒   ▒▒   ▓▒█░▒ ▒▓▒ ▒ ░    ▒ ░░▒░▒░░ ▒░ ░░ ▒▓ ░▒▓░░░ ▒░ ░
+     ░ ░░   ▒ ░░▒ ░          ▒ ░ ░    ▒   ▒▒ ░░ ░▒  ░ ░    ▒ ░▒░ ░ ░ ░  ░  ░▒ ░ ▒░ ░ ░  ░
+       ░░   ▒ ░░░            ░   ░    ░   ▒   ░  ░  ░      ░  ░░ ░   ░     ░░   ░    ░   
+        ░   ░                  ░          ░  ░      ░      ░  ░  ░   ░  ░   ░        ░  ░ 
+  —————░———————————————————————————————————————————
+  Designed & developed by Viputheshwar Sitaraman. 
+  All rights reserved. (C) Copyright 2018. 
+  No re-use or modification without permission.
+  —————————————————————————————————————————————————
+     ✎ @viputheshwar
+     🍻 from Los Angeles, CA
+     ✉ http://sitaraman.vip
+-->
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      
+      <title>{{ title }}</title>
+      <meta ng-repeat="meta in metas" ng-attr-name="meta.name" ng-attr-content="meta.content">
+      <meta name="publisher" content="Viputheshwar Sitarmaan">
+      <meta name="author" content="Viputheshwar Sitaraman">
+      
+
+      <!-- Color -->
+      <meta name="theme-color" content="#ff3d58">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+      <!-- Favicon -->
+      <link rel="icon"
+        type="image/png"
+        href="./favicon.png">
+      <link rel="icon"
+        sizes="192x192"
+        href="./icon_192.png">  
+      
+
+      <!-- Bootstrap Core CSS -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
+      <!-- Animation CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+      <!-- WOW js-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script><script>new WOW().init();</script>
+
+      <!-- Custom Styles -->
+      <link href="style.css" rel="stylesheet">
+      
+      <!-- Fonts CSS -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  </head>
+  <!-- <base href="/admin/"> -->
+  <body data-spy="scroll" data-target="#navbar" style="background-color: transparent;">
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+      your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+    <div ng-include="'/static/nav.html'"></div>
+    <!-- Our Website Content Goes Here -->
+    <div ng-view style="padding-top: 70px; min-width: 100vw;"></div>
+    <div ng-include="'/static/footer.html'"></div>
+        
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- Vendor: Angular, followed by our custom Javascripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.min.js"></script>
+
+    <!-- TinyMCE -->  
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.3/tinymce.min.js"></script> -->
+
+    <!-- Our Website Javascripts -->
+    <script src="main.js"></script>
+  </body>
+</html>
