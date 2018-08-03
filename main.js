@@ -67,7 +67,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
       templateUrl: "partials/404.html", 
       controller: "PageCtrl"
   });
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 }]
 // , ['$sceDelegateProvider', function($sceDelegateProvider) {
 //     $sceDelegateProvider.resourceUrlWhitelist([
@@ -93,9 +93,7 @@ app.controller('PageCtrl', function ($scope, $location, $http) {
   });
 
   // Activates Tooltips for Social Links
-  $('.tooltip-social').tooltip({
-    selector: "a[data-toggle=tooltip]"
-  })
+  $('[data-toggle="tooltip"]').tooltip()
 
   $('body').scrollspy({ 
   	target: '#navbar' 
