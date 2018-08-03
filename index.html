@@ -27,14 +27,39 @@
      ✉ http://sitaraman.vip
 -->
   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       
-      <title>{{ title }}</title>
-      <meta ng-repeat="meta in metas" ng-attr-name="meta.name" ng-attr-content="meta.content">
-      <meta name="publisher" content="Viputheshwar Sitarmaan">
-      <meta name="author" content="Viputheshwar Sitaraman">
-      
+      <title>{{title}}</title>
+      <meta name="publisher" content="{{company}}">
+      <meta name="keywords" content="{{ meta.keywords }}">
+      <meta name="description" content="{{ meta.description }}"><!-- (limit to 150 characters) -->
+      <meta name="author" content="{{author}}">
+      <meta name="application-name" content="{{ website }}">
+
+      <!-- Search -->
+      <meta name="robots" content="index,follow"><!-- All Search Engines -->
+      <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+      <!-- Social -->
+      <!-- <meta property="fb:app_id" content="123456789"> -->
+      <meta property="og:url" content="{{url}}">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="{{title}}">
+      <!-- <meta property="og:image" content="http://example.com/image.jpg"> -->
+      <meta property="og:description" content="{{meta.description}}">
+      <meta property="og:site_name" content="{{website}}">
+      <meta property="og:locale" content="en_US">
+      <meta property="article:author" content="{{author}}">
+
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:site" content="{{twitter}}">
+      <meta name="twitter:creator" content="{{twitter}}">
+      <meta name="twitter:url" content="{{url}}">
+      <meta name="twitter:title" content="{{title}}">
+      <meta name="twitter:description" content="{{meta.description}}">
+      <!-- <meta name="twitter:image" content="http://example.com/image.jpg"> -->
 
       <!-- Color -->
       <meta name="theme-color" content="#ff3d58">
@@ -74,7 +99,10 @@
 
     <div ng-include="'/static/nav.html'"></div>
     <!-- Our Website Content Goes Here -->
-    <div ng-view style="padding-top: 70px; min-width: 100vw;"></div>
+    <div ng-view style="padding: 70px 0; min-width: 100vw;">
+      <update-meta property="og:url" content="{{url}}"></update-meta>
+      <update-meta property="twitter:url" content="{{url}}"></update-meta>
+    </div>
     <div ng-include="'/static/footer.html'"></div>
         
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -88,6 +116,7 @@
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.3/tinymce.min.js"></script> -->
 
     <!-- Our Website Javascripts -->
+    <script src="vendors/update-meta.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

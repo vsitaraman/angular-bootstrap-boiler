@@ -3,7 +3,8 @@
  * Main AngularJS Web Application
  */
 var app = angular.module('vsApp', [
-  'ngRoute'
+  'ngRoute',
+  'updateMeta'
 ]);
 
 /** 
@@ -19,10 +20,13 @@ app.run(function($rootScope, $http, $sce, $compile, $location) {
     $rootScope.isActive = function(route) {
         return route === $location.path();
     };
-    $rootScope.title = "Website — We excel at mediocre slogans.";
+    $rootScope.title = "YourSite — We excel at mediocre slogans.";
     $rootScope.url = "website.com";
-    $rootScope.website = "Website Name";
+    $rootScope.website = "YourSite";
+    $rootScope.suffix = " — YourSite";
     $rootScope.company = "Example, Inc.";
+    $rootScope.twitter = "@website";
+    $rootScope.author = "Viputheshwar Sitaraman";
     $rootScope.email = "hello@website.com";
     $rootScope.metas = [{
       name:'description',
@@ -48,8 +52,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     // Home
     .when("/", {
       templateUrl: "partials/home.html", 
-      // controller: "PageCtrl",
-      controller: "HomeHeader"
+      controller: "PageCtrl"
+      // controller: "HomeHeader"
     })
     .when("/terms", {
       templateUrl: "partials/terms.html", 
@@ -77,25 +81,11 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 );
 
 /**
- * Controls all other Pages
- */
-app.controller('HomeHeader', function ($scope, $location, $http) {
-  console.log("Home page");
-  $scope.title = "Home";
-  $scope.metas =  [{
-    name:'description',
-    content :'This is the home'
-  },{
-    name:'keywords',
-    content :'AngularJS, Dynamic, Metas'
-  }];
-});
-
-/**
- * Controls all other Pages
+ * Controls all Pages
  */
 app.controller('PageCtrl', function ($scope, $location, $http) {
   console.log("Page Controller reporting for duty.");
+  $scope.url = $location.absUrl();
 
   // Activates the Carousel
   $('.carousel').carousel({
