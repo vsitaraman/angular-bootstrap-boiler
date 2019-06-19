@@ -4,7 +4,7 @@ Boilerplate template for SEO-friendly single-page web apps on Github Pages using
 	
 ## Getting Started	
 	
-Make sure to properly configure your instance for best usage. View the [live demo here](https://vsitaraman.github.io/angular-bootstrap-boiler/).
+Make sure to properly configure your instance for best usage. View the [live demo here](https://vsitaraman.github.io/ng-bs-boilerplate).
 
 #### Configuration
 Either (a) if you have server-side access, add the code included below or use the existing `.htaccess` file, otherwise (b) disable HTML location mode by commenting out `$locationProvider.html5Mode(true);` under the AngularJS route provider in `main.js`.
